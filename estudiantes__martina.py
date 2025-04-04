@@ -4,7 +4,6 @@ estudiantes = {
     "Pedro López": {"edad": 18, "materias": ["Biología", "Inglés"]}
 }
 
-# Función para agregar un nuevo estudiante
 def agregar_estudiante():
     nombre = input("Ingrese el nombre del estudiante: ")
     edad = int(input("Ingrese la edad del estudiante: "))
@@ -12,7 +11,6 @@ def agregar_estudiante():
     estudiantes[nombre] = {"edad": edad, "materias": [materia.strip() for materia in materias]}
     print(f"Estudiante {nombre} agregado correctamente.")
 
-# Función para mostrar todos los estudiantes
 def mostrar_estudiantes():
     if not estudiantes:
         print("No hay estudiantes registrados.")
@@ -20,7 +18,6 @@ def mostrar_estudiantes():
         for nombre, datos in estudiantes.items():
             print(f"Nombre: {nombre}, Edad: {datos['edad']}, Materias: {', '.join(datos['materias'])}")
 
-# Función para eliminar un estudiante por nombre
 def eliminar_estudiante():
     nombre = input("Ingrese el nombre del estudiante a eliminar: ")
     if nombre in estudiantes:
@@ -29,7 +26,6 @@ def eliminar_estudiante():
     else:
         print("Estudiante no encontrado.")
 
-# Función para buscar un estudiante por nombre
 def buscar_estudiante():
     nombre = input("Ingrese el nombre del estudiante a buscar: ")
     if nombre in estudiantes:
@@ -38,7 +34,6 @@ def buscar_estudiante():
     else:
         print("Estudiante no encontrado.")
 
-# Función para verificar si una palabra clave está en el nombre de algún estudiante
 def verificar_palabra_clave():
     palabra = input("Ingrese una palabra clave para buscar en los nombres: ").lower()
     encontrados = [nombre for nombre in estudiantes if palabra in nombre.lower()]
@@ -49,7 +44,6 @@ def verificar_palabra_clave():
     else:
         print("No se encontraron estudiantes con esa palabra clave.")
 
-# Menú principal
 def menu():
     while True:
         print("\nMenú de opciones:")
@@ -79,5 +73,4 @@ def menu():
             case _:
                 print("Opción no válida. Intente nuevamente.")
 
-# Ejecutar el programa
 menu()
